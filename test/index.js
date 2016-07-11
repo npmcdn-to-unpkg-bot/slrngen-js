@@ -5,13 +5,21 @@ describe('slrngen-js', function () {
   it('Create SLRN', function () {
     var str = slrngenJs.create();
     assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
+    str = slrngenJs.create();
+    assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
+    str = slrngenJs.create();
+    assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
+    str = slrngenJs.create();
+    assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
+    str = slrngenJs.calc('20400883');
+    assert.equal('204008830', '20400883' + str, 'SLRN is invalid!');
   });
   it('Verify SLRN with dashes', function () {
     var str = '123-456-781';
-    assert(slrngenJs.verify(str), 'SLRN is valid!');
+    assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
   });
   it('Verify SLRN without dashes', function () {
     var str = '123456781';
-    assert(slrngenJs.verify(str), 'SLRN is valid!');
+    assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
   });
 });
