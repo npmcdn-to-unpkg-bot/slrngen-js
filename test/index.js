@@ -4,7 +4,7 @@ import slrngenJs from '../lib';
 describe('slrngen-js', function () {
   it('Create SLRN', function () {
     var str = slrngenJs.create();
-    assert(slrngenJs.verify(str), 'New SLRN is valid!');
+    assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
   });
   it('Verify SLRN with dashes', function () {
     var str = '123-456-781';
