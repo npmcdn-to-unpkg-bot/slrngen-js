@@ -10,9 +10,13 @@ $ npm install --save slrngen-js
 ## Usage
 
 ```js
-var slrngenJs = require('slrngen-js');
+var SLRN = require('slrngen-js');
 
-slrngenJs('Rainbow');
+var str = SLRN.create();
+console.log(str);
+
+console.log(SLRN.verify(str));
+
 ```
 ## License
 
