@@ -8,7 +8,7 @@
     "bin",
     "dist"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": { 
     "slrngen" : "bin/slrngen" 
   },
