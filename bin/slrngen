@@ -1,0 +1,56 @@
+#!/usr/bin/env node --harmony
+
+var program = require('commander');
+var request = require('superagent');
+var chalk = require('chalk');
+var SLRN = require('../lib')
+
+program
+  .arguments('<slave>')
+  .option('-f, --fetlife', 'The slave number to check on Fetlife')
+  .option('-b, --browser', 'Open the slave number in the system browser')
+  .action(function(slave) {
+    var newSlave;
+    if (slave && slave === 'new') {
+      newSlave = SLRN.create();
+      newSlave = SLRN.fmt(newSlave);
+    } else if (slave && slave.length == 11) {
+      newSlave = slave;
+    } else if (slave && slave.length == 9) {
+      newSlave = SLRN.fmt(slave);
+    } else {
+      console.log(chalk.bold.yellow('Number not big enough, creating a new one'));
+      newSlave = SLRN.create();
+      newSlave = SLRN.fmt(newSlave);
+    }
+      
+    var url;
+    if (program.fetlife) {
+      url = 'https://fetlife.com/'+newSlave;
+    } else {
+      url = 'http://www.slaveregister.com/'+newSlave;
+    } 
+    request
+      .get(url)
+      .end(function (err, res) {
+        if (res && res.ok) {
+          console.log(chalk.bold.cyan('link: ') + url);
+          if (program.browser) {
+            require('child_process').spawn('open', [url]);
+          }
+          process.exit(0);
+        }
+
+      var errorMessage;
+      if (res && res.status === 401) {
+        errorMessage = "Authentication failed! Bad access token?";
+      } else if (err) {
+        errorMessage = err;
+      } else {
+        errorMessage = res.text;
+      }
+      console.error(chalk.red(errorMessage));
+      process.exit(1);
+    });
+  })
+  .parse(process.argv);

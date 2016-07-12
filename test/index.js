@@ -11,7 +11,7 @@ describe('slrngen-js', function () {
     assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
     str = slrngenJs.create();
     assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
-    str = slrngenJs.calc('20400883');
+    str = slrngenJs.checksum('20400883');
     assert.equal('204008830', '20400883' + str, 'SLRN is invalid!');
   });
   it('Verify SLRN with dashes', function () {
@@ -21,5 +21,9 @@ describe('slrngen-js', function () {
   it('Verify SLRN without dashes', function () {
     var str = '123456781';
     assert(slrngenJs.verify(str), str + ': SLRN is invalid!');
+  });
+  it('Format SLRN with dashes', function () {
+    var str = '123456781';
+    assert.equal('123-456-781', slrngenJs.fmt(str), 'SLRN is formated incorrectly!');
   });
 });
