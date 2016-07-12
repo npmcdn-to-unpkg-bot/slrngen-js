@@ -1,13 +1,26 @@
 # slrngen-js [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Slave Register Number Generator
 
+## Setup
+
+https://nodejs.org/en/
+
+Or on Mac with homebrew
+
+```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew update
+brew install node
+```
+
 ## Installation
 
 ```sh
 $ npm install --save slrngen-js
 ```
 
-## Usage
+## Library Usage
 
 ```js
 var SLRN = require('slrngen-js');
@@ -16,8 +29,24 @@ var str = SLRN.create();
 console.log(str);
 
 console.log(SLRN.verify(str));
-
 ```
+
+## CLI Usage
+
+Create a new number and check if it exist on www.slaveregister.com
+```sh
+$ slrngen new --browser
+```
+Validates a current number against www.slaveregister.com
+```sh
+$ slrngen 123-456-781 --browser
+```
+Validates a current number against fetlife.com
+```sh
+$ slrngen 123-456-781 --fetlife --browser
+```
+# Note, the library nor the cli tool do not store numbers to a database.
+
 ## License
 
 MIT © [Fernando Ortiz](http://gh.nandub.info/)
