@@ -3,7 +3,7 @@
 var program = require('commander');
 var request = require('superagent');
 var chalk = require('chalk');
-var SLRN = require('../lib')
+var SLRN = require('../dist')
 
 program
   .arguments('<slave>')
