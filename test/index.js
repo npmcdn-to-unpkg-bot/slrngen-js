@@ -36,4 +36,7 @@ describe('slrngen-js', function () {
     var str = slrngenJs.prefix();
     assert.equal('2672204008830', str + '204008830', 'SLRN format is correct!');
   });
+  it('Deformat a SLRN', function () {
+    assert.equal('204008830', slrngenJs.defmt('204-008-830'), 'SLRN deformat is correct!');
+  });
 });
