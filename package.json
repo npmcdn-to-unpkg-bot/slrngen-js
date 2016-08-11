@@ -1,6 +1,6 @@
 {
   "name": "slrngen-js",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Slave Register Number Generator",
   "homepage": "https://github.com/nandub/slrngen-js",
   "author": "Fernando Ortiz",
