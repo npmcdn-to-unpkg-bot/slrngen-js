@@ -14,36 +14,45 @@ brew update
 brew install node
 ```
 
-## Installation
+## Node Installation
 
 ```sh
-$ npm install --save slrngen-js
+$ npm install --save node-sgen
 ```
 
-## Library Usage
+## Bower Installation
+```sh
+$ bower install --save sgen
+```
+
+## Node Library Usage
 
 ```js
-var SLRN = require('slrngen-js');
+var SGen = require('node-sgen');
 
-var str = SLRN.create();
+var str = SGen().create();
 console.log(str);
 
-console.log(SLRN.verify(str));
+console.log(SGen().verify(str));
 ```
+
+## Browser Library Usage
+
+Coming Soon
 
 ## CLI Usage
 
 Create a new number and check if it exist on www.slaveregister.com
 ```sh
-$ slrngen new --browser
+$ sgen new --browser
 ```
 Validates a current number against www.slaveregister.com
 ```sh
-$ slrngen 123-456-781 --browser
+$ sgen 123-456-781 --browser
 ```
 Validates a current number against fetlife.com
 ```sh
-$ slrngen 123-456-781 --fetlife --browser
+$ sgen 123-456-781 --fetlife --browser
 ```
 # Note, the library nor the cli tool do not store numbers to a database.
 
