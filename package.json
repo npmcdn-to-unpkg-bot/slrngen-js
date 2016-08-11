@@ -14,7 +14,7 @@
   ],
   "main": "sgen.js",
   "bin": {
-    "slrngen": "bin/slrngen"
+    "sgen": "bin/sgen"
   },
   "keywords": [
     "slrngen"
