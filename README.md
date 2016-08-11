@@ -61,8 +61,8 @@ $ sgen 123-456-781 --fetlife --browser
 MIT © [Fernando Ortiz](http://gh.nandub.info/)
 
 
-[npm-image]: https://badge.fury.io/js/slrngen-js.svg
-[npm-url]: https://npmjs.org/package/slrngen-js
+[npm-image]: https://badge.fury.io/js/node-sgen.svg
+[npm-url]: https://npmjs.org/package/node-sgen
 [travis-image]: https://travis-ci.org/nandub/slrngen-js.svg?branch=master
 [travis-url]: https://travis-ci.org/nandub/slrngen-js
 [daviddm-image]: https://david-dm.org/nandub/slrngen-js.svg?theme=shields.io
