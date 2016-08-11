@@ -19,7 +19,7 @@ clean:
 	@rm -fr dist/
 
 bump:
-	@npm version $(kind)
+	@npm version $(KIND)
 
 npm-dep:
 	@test `which npm` || echo 'You need npm to do npm install... makes sense?'
