@@ -4,7 +4,7 @@ test: npm-dep build
 build: npm-dep
 	@npm build
 
-release: npm-dep bump
+release: npm-dep build bump
 	@git push origin master
 	@git push origin v$(shell node version.js)
 	@make publish
