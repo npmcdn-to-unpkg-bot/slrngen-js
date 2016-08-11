@@ -3,7 +3,7 @@
 var program = require('commander');
 var request = require('superagent');
 var chalk = require('chalk');
-var SLRN = require('../dist')
+var SGen = require('../sgen');
 
 program
   .arguments('<slave>')
@@ -11,6 +11,7 @@ program
   .option('-b, --browser', 'Open the slave number in the system browser')
   .action(function(slave) {
     var newSlave;
+    var SLRN = SGen();
     if (slave && slave === 'new') {
       newSlave = SLRN.create();
       newSlave = SLRN.fmt(newSlave);
@@ -23,13 +24,13 @@ program
       newSlave = SLRN.create();
       newSlave = SLRN.fmt(newSlave);
     }
-      
+
     var url;
     if (program.fetlife) {
       url = 'https://fetlife.com/'+newSlave;
     } else {
       url = 'http://www.slaveregister.com/'+newSlave;
-    } 
+    }
     request
       .get(url)
       .end(function (err, res) {

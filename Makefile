@@ -1,5 +1,8 @@
-test: npm-dep
+test: npm-dep build
 	@npm test
+
+build: npm-dep
+	@npm build
 
 release: npm-dep bump
 	@git push origin master
@@ -22,4 +25,3 @@ npm-dep:
 	@test `which npm` || echo 'You need npm to do npm install... makes sense?'
 
 .PHONY: all
-
