@@ -1,5 +1,5 @@
 {
-  "name": "slrngen-js",
+  "name": "node-sgen",
   "version": "0.1.0",
   "description": "Slave Register Number Generator",
   "homepage": "https://github.com/nandub/slrngen-js",
