@@ -1,0 +1,22 @@
+{
+  "name": "sgen",
+  "description": "Slave Register Number Generator",
+  "main": "sgen.js",
+  "authors": [
+    "Fernando Ortiz"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sgen",
+    "number",
+    "generator"
+  ],
+  "homepage": "https://github.com/nandub/slrngen-js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
