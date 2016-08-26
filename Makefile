@@ -1,3 +1,5 @@
+KIND = patch
+
 test: npm-dep build
 	@npm test || { exit 1; }
 
