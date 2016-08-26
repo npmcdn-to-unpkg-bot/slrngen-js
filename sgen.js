@@ -77,32 +77,20 @@
     var max = 99999999;
 
     self.create = function () {
-      return self.createSLRN();
-    };
-
-    self.createSLRN = function () {
       var eigth = getRandomInt(min, max);
-      var ninth = self.calculateChecksumDigit(eigth.toString());
+      var ninth = self.checksum(eigth.toString());
       return eigth.toString() + ninth.toString();
     };
 
     self.verify = function (code) {
-      return self.verifySLRN(code);
-    };
-
-    self.verifySLRN = function (code) {
       var result = replaceAll(code, '-', '');
       var eigthString = result.substring(0, result.length - 1);
-      var ninth = self.calculateChecksumDigit(eigthString);
+      var ninth = self.checksum(eigthString);
       return (eigthString + ninth) === result;
     };
 
     self.checksum = function (code) {
-      return self.calculateChecksumDigit(code);
-    };
-
-    self.calculateChecksumDigit = function (code) {
-      var prefixAndCode = self.prefixCode() + code;
+      var prefixAndCode = self.prefix() + code;
       var codeWithoutVd = prefixAndCode.substring(0, 12);
       var e = sumEven(codeWithoutVd);
       var o = sumOdd(codeWithoutVd);
@@ -113,34 +101,18 @@
     };
 
     self.fmt = function (code) {
-      return self.formatSLRN(code);
-    };
-
-    self.formatSLRN = function (code) {
       return code.substring(0, 3) + '-' + code.substring(3, 6) + '-' + code.substring(6);
     };
 
     self.fmtw = function (code) {
-      return self.formatWithSLRN(code);
-    };
-
-    self.formatWithSLRN = function (code) {
       return 'SLRN ' + code.substring(0, 3) + '-' + code.substring(3, 6) + '-' + code.substring(6);
     };
 
     self.prefix = function () {
-      return self.prefixCode();
-    };
-
-    self.prefixCode = function () {
       return '2672';
     };
 
     self.defmt = function (code) {
-      return self.deformatSLRN(code);
-    };
-
-    self.deformatSLRN = function (code) {
       var str = code;
       if (code.indexOf('-') > 0) {
         str = code.substring(0, 3) + code.substring(4, 7) + code.substring(8);
