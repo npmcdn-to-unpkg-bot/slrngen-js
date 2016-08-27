@@ -1,4 +1,5 @@
 # slrngen-js [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![semantic-release][semantic-release-image]][semantic-release-url] [![Commitizen friendly][commitizen-image]][commitizen-url]
 > Slave Register Number Generator
 
 ## Setup
@@ -67,3 +68,7 @@ MIT © [Fernando Ortiz](http://gh.nandub.info/)
 [travis-url]: https://travis-ci.org/nandub/slrngen-js
 [daviddm-image]: https://david-dm.org/nandub/slrngen-js.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/nandub/slrngen-js
+[semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
+[commitizen-image]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli
