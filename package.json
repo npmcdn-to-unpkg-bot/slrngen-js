@@ -47,6 +47,9 @@
   "bugs": {
     "url": "https://github.com/nandub/slrngen-js/issues"
   },
+  "release": {
+    "branch": "master"
+  },
   "config": {
     "ghooks": {
       "commit-msg": "validate-commit-msg"
