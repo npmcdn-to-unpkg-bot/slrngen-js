@@ -6,9 +6,6 @@
   var root = this;
   var previous_sgen = root.sgen;
 
-  // var has_require = typeof require !== 'undefined';
-  // var v = root.v || has_require && require('./version');
-
   function SGen() {
     var self = this;
 
@@ -43,14 +40,6 @@
     function toNumeric(string) {
       return parseInt(string.replace(/\D/g, ''), 10);
     }
-
-    /**
-     * Returns a random number between min (inclusive) and max (exclusive)
-     */
-    /* function getRandomArbitrary(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-    */
 
     /**
      * Returns a random integer between min (inclusive) and max (inclusive)
