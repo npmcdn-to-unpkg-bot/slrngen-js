@@ -22,6 +22,7 @@
     "test": "./test.sh",
     "build": "./build.sh",
     "prepublish": "npm run build",
+    "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "license": "MIT",
