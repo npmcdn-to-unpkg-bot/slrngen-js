@@ -21,11 +21,6 @@ brew install node
 $ npm install --save node-sgen
 ```
 
-## Bower Installation
-```sh
-$ bower install --save sgen
-```
-
 ## Node Library Usage
 
 ```js
@@ -39,7 +34,9 @@ console.log(SGen().verify(str));
 
 ## Browser Library Usage
 
-Coming Soon
+```html
+<script src="https://npmcdn.com/node-sgen/dist/sgen.min.js"></script>
+```
 
 ## CLI Usage
 
