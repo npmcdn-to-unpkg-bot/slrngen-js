@@ -6,9 +6,8 @@
   "author": "Fernando Ortiz",
   "files": [
     "bin",
+    "dist",
     "sgen.js",
-    "sgen-min.js",
-    "sgen-min.map",
     "README.md",
     "LICENSE"
   ],
@@ -22,6 +21,7 @@
   "scripts": {
     "test": "./test.sh",
     "build": "./build.sh",
+    "prepublish": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "license": "MIT",
