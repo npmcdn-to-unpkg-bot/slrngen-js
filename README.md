@@ -35,7 +35,7 @@ console.log(SGen().verify(str));
 ## Browser Library Usage
 
 ```html
-<script src="https://npmcdn.com/node-sgen/dist/sgen.min.js"></script>
+<script src="https://unpkg.com/node-sgen/dist/sgen.min.js"></script>
 ```
 
 ## CLI Usage
